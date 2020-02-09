@@ -3,6 +3,8 @@ services:
   - docker
 
   script:
-    - docker build sauryaacharya/server .
+    - docker build -t sauryaacharya/server .
+
+  after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push sauryaacharya/server
