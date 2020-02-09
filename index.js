@@ -10,7 +10,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //postgres client setup
-// another commit
 const { Pool } = require("pg");
 const pgClient = new Pool({
   user: keys.pgUser,
@@ -66,5 +65,5 @@ app.post("/values", async (req, res) => {
 });
 
 app.listen(5000, err => {
-  console.log("Listening");
+  console.log("Listening to 5000");
 });
